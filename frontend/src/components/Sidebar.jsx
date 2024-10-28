@@ -63,7 +63,7 @@ export default function Sidebar() {
         </Stack>
         <List sx={{ color: "#C4C4C4" }}>
           <ListItem disablePadding>
-            <ListItemButton onClick={() => navigate("/")}>
+            <ListItemButton onClick={() => navigate("/admin")}>
               <ListItemIcon>
                 <EmojiHappy />
               </ListItemIcon>
@@ -71,7 +71,7 @@ export default function Sidebar() {
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
-            <ListItemButton onClick={() => navigate("/books")}>
+            <ListItemButton onClick={() => navigate("/admin/books")}>
               <ListItemIcon>
                 <BookIcon />
               </ListItemIcon>
@@ -79,7 +79,7 @@ export default function Sidebar() {
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
-            <ListItemButton onClick={() => navigate("/authors")}>
+            <ListItemButton onClick={() => navigate("/admin/authors")}>
               <ListItemIcon>
                 <EmojiHappy />
               </ListItemIcon>
@@ -87,7 +87,7 @@ export default function Sidebar() {
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
-            <ListItemButton onClick={() => navigate("/stores")}>
+            <ListItemButton onClick={() => navigate("/admin/stores")}>
               <ListItemIcon>
                 <EmojiHappy />
               </ListItemIcon>
@@ -100,7 +100,6 @@ export default function Sidebar() {
         <Link
           underline="none"
           target="_blank"
-          //   onClick={}
           sx={{
             cursor: "pointer",
             display: "flex",

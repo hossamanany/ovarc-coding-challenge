@@ -36,14 +36,6 @@ export default function Navbar() {
             aria-label="breadcrumb"
             separator={<NavigateNextIcon fontSize="small" />}
           >
-            <Link
-              underline="hover"
-              color="inherit"
-              component={RouterLink}
-              to="/"
-            >
-              Admin
-            </Link>
             {pathnames.map((value, index) => {
               const to = `/${pathnames.slice(0, index + 1).join("/")}`;
               const isLast = index === pathnames.length - 1;
