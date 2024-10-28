@@ -2,13 +2,14 @@ import Grid from "@mui/material/Grid2";
 import { Typography, Stack, Button } from "@mui/material";
 import BookCard from "../components/BookCard";
 import TableView from "../components/TableView";
+import SearchBar from "../components/SearchBar";
 
 export default function Authors() {
   return (
-    <Grid sx={{ px: 4, py: 2 }}>
+    <Grid container sx={{ px: 4, py: 2 }}>
       <Stack direction="row">
         <Typography sx={{ fontWeight: "bold" }}>Authors List</Typography>
-        {/* <Search /> */}
+        <SearchBar />
         <Button variant="contained" color="primary">
           Add New Author
         </Button>

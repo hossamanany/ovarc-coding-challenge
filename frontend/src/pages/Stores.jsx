@@ -2,13 +2,14 @@ import Grid from "@mui/material/Grid2";
 import { Typography, Stack, Button } from "@mui/material";
 import TableView from "../components/TableView";
 import StoreCard from "../components/StoreCard";
+import SearchBar from "../components/SearchBar";
 
 export default function Stores() {
   return (
     <Grid sx={{ px: 4, py: 2 }}>
       <Stack direction="row">
         <Typography sx={{ fontWeight: "bold" }}>Stores List</Typography>
-        {/* <Search /> */}
+        <SearchBar />
         <Button variant="contained" color="primary">
           Add New Store
         </Button>

@@ -10,7 +10,6 @@ import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import User from "./User.jsx";
 import { useLocation, Link as RouterLink } from "react-router-dom";
 
-// TODO: Fix breadcrumbs to be dynamic
 export default function Navbar() {
   const location = useLocation();
   const pathnames = location.pathname.split("/").filter((x) => x);
@@ -26,8 +25,9 @@ export default function Navbar() {
         sx={{
           display: "flex",
           flexDirection: "row",
-          alignContent: "space-between",
-          padding: 4,
+          justifyContent: "space-between",
+          px: 4,
+          pt: 2,
         }}
       >
         <Stack>
@@ -67,8 +67,8 @@ export default function Navbar() {
         </Stack>
         <User />
       </Stack>
-      <Box sx={{ maxWidth: 600, margin: "0 auto", padding: 2 }}>
-        <Divider sx={{ mx: 2 }} />
+      <Box sx={{ p: 2 }}>
+        <Divider sx={{ mx: 2, borderBottomWidth: 2 }} />
       </Box>
     </>
   );

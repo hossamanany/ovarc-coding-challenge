@@ -5,6 +5,8 @@ import { connectDB } from "./config/db.js";
 import authorRoutes from "./routes/author.route.js";
 import bookRoutes from "./routes/book.route.js";
 import storeRoutes from "./routes/store.route.js";
+import uploadRoutes from './routes/upload.route.js';
+
 
 dotenv.config();
 
@@ -21,9 +23,11 @@ app.use((req, res, next) => {
 });
 
 // API routes
-app.use("/api/authors", authorRoutes);
-app.use("/api/books", bookRoutes);
-app.use("/api/stores", storeRoutes);
+app.use("/authors", authorRoutes);
+app.use("/books", bookRoutes);
+app.use("/stores", storeRoutes);
+app.use('/api', uploadRoutes);
+
 
 // Serve static files in production
 if (process.env.NODE_ENV === "production") {

@@ -3,8 +3,7 @@ import Book from "../models/book.model.js";
 
 export const getBooks = async (req, res) => {
     try {
-        const books = await Book.find({})
-            .populate("author", "name"); // Only fetch the author's name
+        const books = await Book.find({}).populate('author').populate('stores');
         res.status(200).json({ success: true, data: books });
     } catch (error) {
         console.log("error in fetching books:", error.message);
@@ -13,13 +12,13 @@ export const getBooks = async (req, res) => {
 };
 
 export const createBook = async (req, res) => {
-    const book = req.body; // user will send this data
+    const { name, pages, author, stores } = req.body; // Include author and stores in the body
 
-    if (!book.name || !book.pages) {
+    if (!name || !pages || !author) {
         return res.status(400).json({ success: false, message: "Please provide all fields" });
     }
 
-    const newBook = new Book(book);
+    const newBook = new Book({ name, pages, author, stores });
 
     try {
         await newBook.save();

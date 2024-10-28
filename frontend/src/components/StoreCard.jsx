@@ -1,43 +1,57 @@
-import Card from "@mui/material/Card";
+import { Card, Box } from "@mui/material";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import Grid from "@mui/material/Grid2";
-import { Stack } from "@mui/material";
+import { ShoppingCart } from "iconsax-react";
 
-export default function AuthorCard() {
+export default function StoreCard() {
   return (
-    <Card>
-      <Grid container>
-        <Grid item md={4}>
-          <CardMedia
-            sx={{ height: 140 }}
-            // image={book?.image}
-            title="green iguana"
-          />
-        </Grid>
-        <Grid
-          // key={`${book?.name}-${book?.publishedBooks}-${index}`}
-          item
-          md={8}
+    <Card
+      sx={{
+        bgcolor: "#FFF6F1",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        textAlign: "center",
+        m: 2,
+        mt: 0,
+        maxWidth: 180,
+      }}
+    >
+      <CardContent
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          p: 0,
+        }}
+      >
+        <Typography variant="h6" component="div">
+          Cover Discovery
+        </Typography>
+        <Typography variant="body1" sx={{ color: "red", fontWeight: "bold" }}>
+          $10.00
+        </Typography>
+      </CardContent>
+      <CardActions sx={{ display: "flex", justifyContent: "center" }}>
+        <Button
+          sx={{
+            bgcolor: "#2374BF",
+            color: "white",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+          size="small"
         >
-          <Stack>
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                {/* {book?.name} */}
-              </Typography>
-              <Typography variant="body2" sx={{ color: "text.secondary" }}>
-                by {/* Publish books: {book?.author} */}
-              </Typography>
-            </CardContent>
-            <CardActions>
-              <Button size="small">View Profile</Button>
-            </CardActions>
-          </Stack>
-        </Grid>
-      </Grid>
+          Sell
+          <Box sx={{ ml: 1, display: "flex", alignItems: "center" }}>
+            <ShoppingCart />
+          </Box>
+        </Button>
+      </CardActions>
     </Card>
   );
 }

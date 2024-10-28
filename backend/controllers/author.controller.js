@@ -39,14 +39,14 @@ export const updateAuthor = async (req, res) => {
     }
 
     try {
-        const updatedAuthor = await Author.findByIdAndUpdate(id, book, { new: true });
+        const updatedAuthor = await Author.findByIdAndUpdate(id, author, { new: true });
         res.status(200).json({ success: true, data: updatedAuthor });
     } catch (error) {
         res.status(500).json({ success: false, message: "Server Error" });
     }
 };
 
-export const deletedAuthor = async (req, res) => {
+export const deleteAuthor = async (req, res) => {
     const { id } = req.params;
 
     if (!mongoose.Types.ObjectId.isValid(id)) {

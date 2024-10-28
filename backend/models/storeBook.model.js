@@ -1,19 +1,20 @@
 import mongoose from "mongoose";
 
 const storeBookSchema = new mongoose.Schema({
-    store_id: {
+    store: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Store',
         required: true
     },
-    book_id: {
+    book: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Book',
         required: true
     },
     price: {
         type: Number,
-        required: true
+        required: true,
+        min: 0
     },
     sold_out: {
         type: Boolean,
